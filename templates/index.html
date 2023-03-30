@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content%}
+
+
+<h5> Upload Image For The Classification </h5>
+<div>  
+    <div> 
+<form action="predicttext", method="POST", enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="col-md-4 col-sm-4"> <label for="fname"> Upload Image Here</label> </div>
+<br>
+<input type="file" name="filepath">
+
+<button type="submit" value="submit">Submit</button>
+</div>
+<br>
+
+
+<!-- <img src ="{{filePathName}}", height="250px", width="450px" alt="image Here"><br> -->
+<!-- {{filePathName}} -->
+
+<div class="card" style="width: 18rem;", >
+    <img src="{{filePathName}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text">Your Uploaded Image is Here.</p>
+    </div>
+<br>
+    <div class="card2" style="width: 18rem;">
+        <img src="" class="card-img-down" alt="..">
+        <div class="card-body2">
+            <p class="card-text">Extracted Hindi Text From the image {{imageName}} is .</p> 
+            <p class="card-text">{{text}}.</p>
+        </div>
+
+{% endblock %}
