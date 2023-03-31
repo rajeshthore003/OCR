@@ -53,7 +53,7 @@ def predicttext(request):
         
         text = pt.image_to_string(image, lang='hin')
 
-        context = {'filePathName': filePathName, 'imageName':imageName,'text': text }
+        context = {'filePathName': filePathName, 'imageName':imageName,'text': text,'file_path':file_path }
         return render(request,'index.html',context)
 
     else:
